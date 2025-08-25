@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.Waitutility;
+
 public class LoginPage {
 
 	WebDriver Driver;
@@ -15,9 +17,9 @@ public class LoginPage {
 		PageFactory.initElements(Driver, this);
 	}
 
-
-	//webelement 7mart
-	@FindBy(xpath = "//b[text()='7rmart supermarket']") private WebElement supermarketname;
+	// webelement 7mart
+	@FindBy(xpath = "//b[text()='7rmart supermarket']")
+	private WebElement supermarketname;
 
 	@FindBy(name = "username")
 	private WebElement userName;
@@ -25,21 +27,33 @@ public class LoginPage {
 	private WebElement passWord;
 	@FindBy(xpath = "//button[text()='Sign In']")
 	private WebElement loginButton;
+	@FindBy(xpath = "//p[text()='Dashboard']")
+	private WebElement dahsboard;
 
-	public void enterValidUserName(String username) {
+	// public void enterValidUserName(String username) {
+	public LoginPage enterValidUserName(String username) {
 		userName.sendKeys(username);
+		return this;
 	}
 
-	public void enterValidPassword(String password) {
+	public LoginPage enterValidPassword(String password) {
 		passWord.sendKeys(password);
+		return this;
 	}
 
-	public void clickOnSignInButton() {
+	public HomePage clickOnSignInButton() {
+		Waitutility wait = new Waitutility();
+		wait.waitForWebElementClickable(Driver, loginButton);
 		loginButton.click();
+		return new HomePage(Driver);
+
 	}
 
-	
-	//7mart
+	public boolean isDashboardDisplayed() {
+		return dahsboard.isDisplayed();
+	}
+
+	// 7mart
 	public String pageHeading() {
 		return supermarketname.getText();
 	}

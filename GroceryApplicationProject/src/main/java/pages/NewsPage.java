@@ -28,24 +28,30 @@ public class NewsPage {
 	@FindBy(xpath = "//h5[contains(text(),'Alert!')]")private WebElement newNewsCreatedsuccesfullyMessage;
 
 	
-	public void clickOnNewUserButtonInNewsPage() {
-		NewUserButtonInNewsPage.click();	
+	public NewsPage clickOnNewUserButtonInNewsPage() {
+		NewUserButtonInNewsPage.click();
+		return this;	
 	}
-	public void typeInNewsTextAreaInNewsPage(String NewsTextInputAreaInNewsPage) {
+	public NewsPage typeInNewsTextAreaInNewsPage(String NewsTextInputAreaInNewsPage) {
 		NewsTextAreaInNewsPage.sendKeys(NewsTextInputAreaInNewsPage);
+		return this;
 	}
-	public void clickOnSubmitButtonInNewsPage() {
+	public NewsPage clickOnSubmitButtonInNewsPage() {
 		SubmitButtonInNewsPage.click();
+		return this;
 	}
-	public void clickOnSearchButtonInNewsPage() {
+	public NewsPage clickOnSearchButtonInNewsPage() {
 		SearchButtonInNewsPage.click();
+		return this;
 	}
-	public void typeInNewsTitleInSearchNewsPage(String NewsTitleInputInNewsPageInNewsPage) {
+	public NewsPage typeInNewsTitleInSearchNewsPage(String NewsTitleInputInNewsPageInNewsPage) {
 		NewsTitleInSearchNewsPage.sendKeys(NewsTitleInputInNewsPageInNewsPage);
+		return this;
 		
 	}
-	public void clickOnSearchButtonInManageNewsPage() {
+	public NewsPage clickOnSearchButtonInManageNewsPage() {
 		SearchButtonInSearchNewsPage.click();
+		return this;
 		
 	}
 	//boolean method

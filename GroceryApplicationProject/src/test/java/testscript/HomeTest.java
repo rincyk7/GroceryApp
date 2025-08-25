@@ -9,11 +9,13 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationcore.GroceryBase;
+import constants.Messages;
 import pages.HomePage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
 
 public class HomeTest extends GroceryBase{
+	HomePage homepage;
 	@Test
 	public void verifyUserisAbleToLoginSuccessfully() throws IOException {
 		String username= ExcelUtility.getStringData(0, 0, "GroceryLoginPage");
@@ -21,18 +23,17 @@ public class HomeTest extends GroceryBase{
 		//object
 		LoginPage loginpage = new LoginPage(driver);
 		//sending values from excel
-		loginpage.enterValidUserName(username);
-		loginpage.enterValidPassword(password);
+		loginpage.enterValidUserName(username).enterValidPassword(password);
 		//explicit wait command
 		//WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		//wait.until(ExpectedConditions.elementToBeCLickoble(password));
-		loginpage.clickOnSignInButton();
-		HomePage homepage = new HomePage(driver);
+		homepage=loginpage.clickOnSignInButton();
+		//HomePage homepage = new HomePage(driver);
 		homepage.clickOnadminlogo();
-		homepage.clickOnLogout();
+		loginpage=homepage.clickOnLogout();
 		//assertequals
 		String Actual = loginpage.pageHeading();
-		Assert.assertEquals(Actual,"7mart", "Heading is Wrong");
+		Assert.assertEquals(Actual,"7mart",Messages.SUCCESSFULLLOGOUT);
 		
 	}
 

@@ -7,11 +7,13 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import automationcore.GroceryBase;
+import constants.Messages;
 import pages.HomePage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
 
 public class LoginTest extends  GroceryBase{
+	HomePage homepage;
 	
 	
 	//Both valid
@@ -23,14 +25,16 @@ public class LoginTest extends  GroceryBase{
 		//object
 		LoginPage loginpage = new LoginPage(driver);
 		//sending values from excel
-		loginpage.enterValidUserName(username);
-		loginpage.enterValidPassword(password);
-		loginpage.clickOnSignInButton();
+		//going to do chaining
+		loginpage.enterValidUserName(username).enterValidPassword(password);
+		//loginpage.enterValidPassword(password);
+		//loginpage.clickOnSignInButton();
+		homepage = loginpage.clickOnSignInButton();
 		HomePage homepage = new HomePage(driver);
 		//assertion for dashboard
 		//logintest
 		boolean dashboardDisplay = homepage.isDashboardDisplayed();
-		Assert.assertTrue(dashboardDisplay, "Dashboard is NOT displayed after login.");
+		Assert.assertTrue(dashboardDisplay, Messages.VALIDCREDENTIALMESSAGE);
 		
 	}
 	
@@ -48,8 +52,8 @@ public class LoginTest extends  GroceryBase{
 		loginpage.clickOnSignInButton();
 		//invalid username method
 				String actual=loginpage.pageHeading();
-				String expected ="7rmarrt"; //change text to fail it
-				Assert.assertEquals(actual,expected,"Error message");
+				String expected ="7rmart"; //change text to fail it
+				Assert.assertEquals(actual,expected,Messages.INVALIDUSERNAMEERROR);
 		
 	}
 	
@@ -62,13 +66,11 @@ public class LoginTest extends  GroceryBase{
 		//object
 		LoginPage loginpage = new LoginPage(driver);
 		//sending values from excel
-		loginpage.enterValidUserName(username);
-		loginpage.enterValidPassword(password);
-		loginpage.clickOnSignInButton();
+		loginpage.enterValidUserName(username).enterValidPassword(password).clickOnSignInButton();
 		//invalid password method
 		String actual=loginpage.pageHeading();
 		String expected ="7rmaart"; //change text to fail it
-		Assert.assertEquals(actual,expected,"Error message");
+		Assert.assertEquals(actual,expected,Messages.INVALIDPASSWORDERROR);
 
 		
 	}
@@ -81,13 +83,11 @@ public class LoginTest extends  GroceryBase{
 		//object
 		LoginPage loginpage = new LoginPage(driver);
 		//sending values from excel
-		loginpage.enterValidUserName(username);
-		loginpage.enterValidPassword(password);
-		loginpage.clickOnSignInButton();
-		//invalid credentials method
-				//String actual=loginpage.pageHeading();
-				//String expected ="7ramart"; //change text to fail it
-				//Assert.assertEquals(actual,expected,"Error message");
+		loginpage.enterValidUserName(username).enterValidPassword(password).clickOnSignInButton();
+		//invalid credentials method Assertion 
+				String actual=loginpage.pageHeading();
+				String expected ="7ramart"; //change text to fail it
+				Assert.assertEquals(actual,expected,Messages.INVALIDCREDENTIALERROR);
 		
 	}
 	

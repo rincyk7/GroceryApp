@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results retried="2" ignored="2" total="5" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-08-18T10:58:24 EDT" name="Parallel Testing" finished-at="2025-08-18T10:58:34 EDT" duration-ms="10070">
+  <suite started-at="2025-08-25T10:32:13 EDT" name="Suite" finished-at="2025-08-25T10:32:23 EDT" duration-ms="9596">
     <groups>
     </groups>
-    <test started-at="2025-08-18T10:58:24 EDT" name="Test" finished-at="2025-08-18T10:58:30 EDT" duration-ms="5322">
+    <test started-at="2025-08-25T10:32:13 EDT" name="Test" finished-at="2025-08-25T10:32:23 EDT" duration-ms="9596">
       <class name="testscript.LoginTest">
-        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testscript.LoginTest@4145bad8]" started-at="2025-08-18T10:58:24 EDT" name="initializeBrowser" finished-at="2025-08-18T10:58:28 EDT" duration-ms="3705" status="PASS">
+        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testscript.LoginTest@52c3cb31]" started-at="2025-08-25T10:32:13 EDT" name="initializeBrowser" finished-at="2025-08-25T10:32:18 EDT" duration-ms="4597" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,196 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeBrowser -->
-        <test-method signature="verifyValidCredentials()[pri:1, instance:testscript.LoginTest@4145bad8]" started-at="2025-08-18T10:58:28 EDT" name="verifyValidCredentials" description="verify whether user is able to login with valid credentials" finished-at="2025-08-18T10:58:29 EDT" duration-ms="1355" status="PASS">
+        <test-method retried="true" signature="verifyValidCredentials()[pri:1, instance:testscript.LoginTest@52c3cb31]" started-at="2025-08-25T10:32:18 EDT" name="verifyValidCredentials" description="verify whether user is able to login with valid credentials" finished-at="2025-08-25T10:32:18 EDT" duration-ms="12" status="SKIP">
+          <exception class="java.io.FileNotFoundException">
+            <message>
+              <![CDATA[C:\Users\14379\eclipse-workspace\GroceryApplicationProject\src\test\resources\TestSheet.xlsx (The system cannot find the path specified)]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.io.FileNotFoundException: C:\Users\14379\eclipse-workspace\GroceryApplicationProject\src\test\resources\TestSheet.xlsx (The system cannot find the path specified)
+at java.base/java.io.FileInputStream.open0(Native Method)
+at java.base/java.io.FileInputStream.open(FileInputStream.java:216)
+at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
+at java.base/java.io.FileInputStream.<init>(FileInputStream.java:111)
+at utilities.ExcelUtility.getStringData(ExcelUtility.java:17)
+at testscript.LoginTest.verifyValidCredentials(LoginTest.java:23)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.io.FileNotFoundException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyValidCredentials -->
-        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testscript.LoginTest@4145bad8]" started-at="2025-08-18T10:58:29 EDT" name="driverQuit" finished-at="2025-08-18T10:58:30 EDT" duration-ms="195" status="PASS">
+        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testscript.LoginTest@52c3cb31]" started-at="2025-08-25T10:32:18 EDT" name="driverQuit" finished-at="2025-08-25T10:32:18 EDT" duration-ms="217" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyValidCredentials status=SUCCESS method=LoginTest.verifyValidCredentials()[pri:1, instance:testscript.LoginTest@4145bad8] output={null}]]]>
+                <![CDATA[[TestResult name=verifyValidCredentials status=SKIP method=LoginTest.verifyValidCredentials()[pri:1, instance:testscript.LoginTest@52c3cb31] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- driverQuit -->
+        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testscript.LoginTest@52c3cb31]" started-at="2025-08-25T10:32:18 EDT" name="initializeBrowser" finished-at="2025-08-25T10:32:20 EDT" duration-ms="1994" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeBrowser -->
+        <test-method retried="true" signature="verifyValidCredentials()[pri:1, instance:testscript.LoginTest@52c3cb31]" started-at="2025-08-25T10:32:20 EDT" name="verifyValidCredentials" description="verify whether user is able to login with valid credentials" finished-at="2025-08-25T10:32:20 EDT" duration-ms="3" status="SKIP">
+          <exception class="java.io.FileNotFoundException">
+            <message>
+              <![CDATA[C:\Users\14379\eclipse-workspace\GroceryApplicationProject\src\test\resources\TestSheet.xlsx (The system cannot find the path specified)]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.io.FileNotFoundException: C:\Users\14379\eclipse-workspace\GroceryApplicationProject\src\test\resources\TestSheet.xlsx (The system cannot find the path specified)
+at java.base/java.io.FileInputStream.open0(Native Method)
+at java.base/java.io.FileInputStream.open(FileInputStream.java:216)
+at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
+at java.base/java.io.FileInputStream.<init>(FileInputStream.java:111)
+at utilities.ExcelUtility.getStringData(ExcelUtility.java:17)
+at testscript.LoginTest.verifyValidCredentials(LoginTest.java:23)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:269)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:76)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.io.FileNotFoundException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyValidCredentials -->
+        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testscript.LoginTest@52c3cb31]" started-at="2025-08-25T10:32:20 EDT" name="driverQuit" finished-at="2025-08-25T10:32:20 EDT" duration-ms="181" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyValidCredentials status=SKIP method=LoginTest.verifyValidCredentials()[pri:1, instance:testscript.LoginTest@52c3cb31] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- driverQuit -->
+        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testscript.LoginTest@52c3cb31]" started-at="2025-08-25T10:32:20 EDT" name="initializeBrowser" finished-at="2025-08-25T10:32:22 EDT" duration-ms="2178" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeBrowser -->
+        <test-method signature="verifyValidCredentials()[pri:1, instance:testscript.LoginTest@52c3cb31]" started-at="2025-08-25T10:32:22 EDT" name="verifyValidCredentials" description="verify whether user is able to login with valid credentials" finished-at="2025-08-25T10:32:22 EDT" duration-ms="2" status="FAIL">
+          <exception class="java.io.FileNotFoundException">
+            <message>
+              <![CDATA[C:\Users\14379\eclipse-workspace\GroceryApplicationProject\src\test\resources\TestSheet.xlsx (The system cannot find the path specified)]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.io.FileNotFoundException: C:\Users\14379\eclipse-workspace\GroceryApplicationProject\src\test\resources\TestSheet.xlsx (The system cannot find the path specified)
+at java.base/java.io.FileInputStream.open0(Native Method)
+at java.base/java.io.FileInputStream.open(FileInputStream.java:216)
+at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
+at java.base/java.io.FileInputStream.<init>(FileInputStream.java:111)
+at utilities.ExcelUtility.getStringData(ExcelUtility.java:17)
+at testscript.LoginTest.verifyValidCredentials(LoginTest.java:23)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:269)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:76)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.io.FileNotFoundException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyValidCredentials -->
+        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testscript.LoginTest@52c3cb31]" started-at="2025-08-25T10:32:22 EDT" name="driverQuit" finished-at="2025-08-25T10:32:23 EDT" duration-ms="276" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyValidCredentials status=FAILURE method=LoginTest.verifyValidCredentials()[pri:1, instance:testscript.LoginTest@52c3cb31] output={null}]]]>
               </value>
             </param>
           </params>
@@ -35,35 +216,5 @@
         </test-method> <!-- driverQuit -->
       </class> <!-- testscript.LoginTest -->
     </test> <!-- Test -->
-    <test started-at="2025-08-18T10:58:30 EDT" name="Test2" finished-at="2025-08-18T10:58:34 EDT" duration-ms="4732">
-      <class name="testscript.LoginTest">
-        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testscript.LoginTest@5890e879]" started-at="2025-08-18T10:58:30 EDT" name="initializeBrowser" finished-at="2025-08-18T10:58:34 EDT" duration-ms="4034" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[edge]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initializeBrowser -->
-        <test-method signature="verifyInValidCredentials()[pri:4, instance:testscript.LoginTest@5890e879]" started-at="2025-08-18T10:58:34 EDT" name="verifyInValidCredentials" description="verify whether user is able to login with invalid credentials" finished-at="2025-08-18T10:58:34 EDT" duration-ms="477" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyInValidCredentials -->
-        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testscript.LoginTest@5890e879]" started-at="2025-08-18T10:58:34 EDT" name="driverQuit" finished-at="2025-08-18T10:58:34 EDT" duration-ms="217" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyInValidCredentials status=SUCCESS method=LoginTest.verifyInValidCredentials()[pri:4, instance:testscript.LoginTest@5890e879] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- driverQuit -->
-      </class> <!-- testscript.LoginTest -->
-    </test> <!-- Test2 -->
-  </suite> <!-- Parallel Testing -->
+  </suite> <!-- Suite -->
 </testng-results>
